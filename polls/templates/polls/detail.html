@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+
+{% block title %}
+Polls Detail
+{% endblock %}
+
+
+{% block content %}
 <h1>{{question.question_text}}</h1>
 {% if error_message %} <P> <strong>{{error_message}}</strong></P> {% endif %}
 
@@ -17,5 +19,4 @@
 
     <input type="submit" value="Vote">
 </form>
-</body>
-</html>
+{% endblock %}

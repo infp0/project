@@ -7,4 +7,12 @@ Detail
 {% block content %}
 {{object.site_name}}<br>
 {{object.url}}
+
+<br>
+<br>
+<tr>
+    <td><a href="{% url 'bookmark:update' pk=bookmark.id %}" class="btn btn-success btn-sm">수정하기</a></td>
+    <td><a href="{% url 'bookmark:delete' pk=bookmark.id %}" class="btn btn-danger btn-sm">삭제하기</a></td>
+</tr>
+
 {% endblock %}

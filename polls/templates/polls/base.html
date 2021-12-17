@@ -1,30 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
-
-
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
+    <meta charset="UTF-8">
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin, latin-ext" rel="stylesheet" type="text/css">
+    <title>Title</title>
 
 </head>
 <body>
 
-<div class="container">
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home:home' %}">Django Project</a>
+    <a class="navbar-brand" href="{% url 'home:home' %}"> Q2 Django Project</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,25 +40,8 @@
     </div>
   </div>
 </nav>
-
-<div class="page-header">
-    {% if user.is_authenticated %}
-    <a href="{% url 'blog:post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span> </a>
-    {% endif %}
-    <h1><a href="{% url 'blog:post_list' %}">HYWU Blog</a></h1>
-</div>
-
-    <p></p>
-
-<div class="content container">
-    <div class="row">
-        <div class="col-md-8">
             {% block content %}
             {% endblock %}
-        </div>
-    </div>
-</div>
-</div>
+
 </body>
 </html>
-
